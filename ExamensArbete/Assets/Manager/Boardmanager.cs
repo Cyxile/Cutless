@@ -55,21 +55,5 @@ public class Boardmanager : MonoBehaviour {
 	
 	}
 
-    void OnDrawGizmos()
-    {
-        
-        
-        for (int i = 0; i < gridX ; i++)
-        {
-            for(int o = 0; o < gridY; o++)
-            {
-                //Gizmos.color = Color.blue;
-                //Gizmos.DrawWireCube(PlayerSide[i, o],new Vector3 (1,1,0.1f));
-                //Gizmos.color = Color.red;
-                //Gizmos.DrawWireCube(EnemySide[i, o], new Vector3(1, 1, 0.1f));
-            }
-            
-        }
-
-    }
+    
 }

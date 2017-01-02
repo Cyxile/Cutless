@@ -3,7 +3,7 @@ using System.Collections;
 
 public class UnitClass : MonoBehaviour {
 
-    
+    protected string unitName;
     protected int unitHp;
     protected int unitDef;
     protected int unitAtk;
@@ -18,9 +18,11 @@ public class UnitClass : MonoBehaviour {
 
 	// Use this for initialization
 	protected virtual void Start ()
-        {
-            ShowHp();    
-	    }
+    {
+
+        ShowHp();
+    }
+       
 	
 	protected virtual void ShowHp ()
         {
@@ -28,4 +30,15 @@ public class UnitClass : MonoBehaviour {
         Debug.Log("unit's Hp is " + unitHp);
 
         }
+    public void Move(Vector3 targetPos)
+    {
+        if (targetPos != unitPos)
+        {
+            this.transform.position = targetPos;
+            unitPos = targetPos;
+            
+        }
+
+    }
+
 }
