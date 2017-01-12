@@ -11,7 +11,8 @@ public class GameManager : MonoBehaviour {
         LOSE,
         WIN,
     }
-    
+
+    bool abilitySwitch = true;
     private Gamestates currentState;
     public GameObject selectedUnit;
     private Vector3 targetPos = new Vector3 (1,1,0);
@@ -94,14 +95,24 @@ public class GameManager : MonoBehaviour {
    void OnGUI()
     {
 
-        if (selectedUnit)
+        if (selectedUnit && abilitySwitch == true)
         {
             if (GUILayout.Button(selectedUnit.GetComponent<UnitClass>().Ability1))
-                Gameplay();
+            {
+                abilitySwitch = false;
+                selectedUnit.GetComponent<UnitClass>().AbilityMethod1();
+            }
+                
             if (GUILayout.Button(selectedUnit.GetComponent<UnitClass>().Ability2))
-                Gameplay();
+            {
+                abilitySwitch = false;
+                selectedUnit.GetComponent<UnitClass>().AbilityMethod1();
+            }
             if (GUILayout.Button(selectedUnit.GetComponent<UnitClass>().Ability3))
-                Gameplay();
+            {
+                abilitySwitch = false;
+                selectedUnit.GetComponent<UnitClass>().AbilityMethod1();
+            }
 
         }
         else

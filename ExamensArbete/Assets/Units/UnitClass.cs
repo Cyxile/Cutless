@@ -70,4 +70,16 @@ public class UnitClass : MonoBehaviour {
 
     }
 
+    public void AbilityMethod1()
+    {
+
+        Debug.Log("Ability one Activated");
+        
+
+    }
+
+
+
+
+
 }
