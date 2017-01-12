@@ -11,6 +11,8 @@ public class Boardmanager : MonoBehaviour {
     [SerializeField] int gridY;
     [SerializeField] [Range(0, 6)] float offset = 5;
 
+
+
     //private Vector3[,] PlayerSide = new Vector3[3, 7];
     //private Vector3[,] EnemySide = new Vector3[3, 7];
     public GameObject[,] PlayerBoardSide = new GameObject[7, 7];
@@ -50,10 +52,5 @@ public class Boardmanager : MonoBehaviour {
         }
     }
 	
-	// Update is called once per frame
-	void Update () {
-	
-	}
 
-    
 }
