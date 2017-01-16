@@ -1,5 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
+
 
 public class UnitClass : MonoBehaviour {
 
@@ -7,12 +9,15 @@ public class UnitClass : MonoBehaviour {
     protected string unitAbility1 = "Ability One";
     protected string unitAbility2 = "Ability two";
     protected string unitAbility3 = "Ability three";
+    [SerializeField]protected GameObject managerUnit;
     protected int unitHp;
     protected int unitDef;
     protected int unitAtk;
     protected float unitSpeed=1;
     protected bool unitType;
     protected Vector3 unitPos;
+    GameObject[,] Playerside;
+
 
     public string Ability1
     {
@@ -46,7 +51,7 @@ public class UnitClass : MonoBehaviour {
 	// Use this for initialization
 	protected virtual void Start ()
     {
-
+        Playerside = managerUnit.GetComponent<Boardmanager>().getArray;
         ShowHp();
     }
        
@@ -74,11 +79,33 @@ public class UnitClass : MonoBehaviour {
     {
 
         Debug.Log("Ability one Activated");
+        StartCoroutine(AbilityCourutine1());
         
 
     }
 
+    IEnumerator AbilityCourutine1()
+    {
+        List<Vector3> position = new List<Vector3>();
+        position.Add(unitPos);
+        
 
+        for (int i = 0; i < 3; i++)
+        {
+            for (int o = 0; o < 7; o++)
+            {
+                Playerside[i, o].GetComponent<Tile>().Checkup(1);
+                
+            }
+
+        }
+
+        Debug.Log(position);
+
+
+
+        yield return 0; 
+    }
 
 
 

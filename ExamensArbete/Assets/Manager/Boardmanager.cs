@@ -12,11 +12,15 @@ public class Boardmanager : MonoBehaviour {
     [SerializeField] [Range(0, 6)] float offset = 5;
 
 
+    public GameObject[,] getArray
+    {
+        get { return PlayerBoardSide; }
 
+    }
     //private Vector3[,] PlayerSide = new Vector3[3, 7];
     //private Vector3[,] EnemySide = new Vector3[3, 7];
-    public GameObject[,] PlayerBoardSide = new GameObject[7, 7];
-    public GameObject[,] EnemyBoardSide = new GameObject[7, 7];
+    public GameObject[,] PlayerBoardSide = new GameObject[3, 7];
+    public GameObject[,] EnemyBoardSide = new GameObject[3, 7];
 
     // Use this for initialization
     void Start () {
